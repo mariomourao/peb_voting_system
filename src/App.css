@@ -1,0 +1,143 @@
+
+
+.App-logo {
+  height: 80px;
+  text-align: left;
+  margin: 0px;
+  border: 0px;
+  padding-left: 15px;
+}
+
+.App-header {
+  background-color: #CFB676;
+  color: #2C3673;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0px;
+  margin: 0px;
+  text-align: center;
+ 
+}
+
+.App-text {
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.App-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Band-info {
+  border: 3px solid #2C3673;
+  padding: 8px;
+  margin: 20px;
+  width: 50%;
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Band-stage {
+  background-color: #2C3673;
+  color: #CFB676;
+  font-size: 25px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 0px;
+  margin: 0px;
+}
+
+.Band-name {
+  color: #2C3673;
+  font-size: 25px;
+  padding-top: 15px;
+  border: 0px;
+  margin: 0px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.Band-hour {
+  color: #2C3673;
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 8px;
+  border: 0px;
+  margin: 0px;
+}
+
+.Vote-container {
+  width: 50%;
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.Vote-value {
+  color: #2C3673;
+  margin: 0px 0px;
+  font-size: 70px;
+  
+}
+
+.Vote-rate {
+  font-size: 6em;
+  color: #2C3673;
+  margin: 0px 0px;
+}
+
+.Row-band{
+  width: 100%;
+  display: flex; 
+  flex-direction: row;
+  background-color: #CFB676;
+}
+
+.button {
+  background-color: #2C3673;
+  border: none;
+  color: #CFB676;
+  padding: 5px 4px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 25px;
+  cursor: pointer;
+}
+
+.Vertical-line{
+    border-bottom: 1px solid white;
+}
+
+.button-voted{
+  color: #2C3673;
+  font-size: 15px;
+  padding: 5px 4px;
+  border: 0px;
+  margin: 4px 25px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.space{
+  padding-bottom: 15px;
+}
