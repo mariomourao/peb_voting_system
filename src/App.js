@@ -12,7 +12,10 @@ class App extends Component {
     const bands = [
       {id: 1, hour: '22h00', stage: 'Médio Tejo', name: 'Siul Sotnas', rate: 2, voted: false},
       {id: 2, hour: '22h50', stage: 'Coimbra', name: 'Raquel Ralha & Pedro Renato',rate: 2, voted: false},
-      {id: 3, hour: '22h40', stage: 'Médio Tejo', name: 'Coiote',rate: 2, voted: false}
+      {id: 3, hour: '22h40', stage: 'Médio Tejo', name: 'Coiote',rate: 2, voted: false},
+      {id: 4, hour: '22h00', stage: 'Médio Tejo', name: 'Os Zhéróis 2.1.', rate: 2, voted: false},
+      {id: 5, hour: '22h50', stage: 'Coimbra', name: 'Birds are Indie',rate: 2, voted: false},
+      {id: 6, hour: '23h40', stage: 'Coimbra', name: 'BJ Rui Ferreira',rate: 2, voted: false}
     ];
 
     return (
@@ -23,7 +26,7 @@ class App extends Component {
           <p className="App-title">Participa! A decisão é tua*</p>
         </header>
         <div className="Vertical-line"/>
-        <Bands bands={bands} />,
+        <Bands bands={bands} />
       </div>
     );
   }
@@ -92,7 +95,7 @@ class Band extends React.Component {
 
             {this.state.voted ? (
               <p className="button-voted" >(Já votou)</p>
-             ) :(
+             ) : (
               <button className="button" disabled={this.state.voted} onClick={ ()=>{this.vote()} }>
                 VOTAR
               </button>
