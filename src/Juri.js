@@ -6,7 +6,7 @@ import './rc.css'
 
 import './App.css';
 
-class App extends Component {
+class Juri extends Component {
   
   state = {
     bands: [],
@@ -14,15 +14,15 @@ class App extends Component {
   }
   
   componentDidMount(){
-    axios.get(`http://peb2018.pt:8080/api/vote`)
+    axios.get(`http://localhost:8080/api/juri`)
     .then(res => {
       const bands = {
-        1:{id: 1, stage: 'Médio Tejo', name: 'Siul Sotnas', rate: 0, voted: false, juri:false},
-        2:{id: 2, stage: 'Coimbra', name: 'Raquel Ralha & Pedro Renato',rate: 0, voted: false, juri:false},
-        3:{id: 3, stage: 'Médio Tejo', name: 'Coiote',rate: 0, voted: false, juri:false},
-        4:{id: 4, stage: 'Médio Tejo', name: 'Os Zhéróis 2.1.', rate: 0, voted: false, juri:false}
+        1:{id: 1, stage: 'Médio Tejo', name: 'Siul Sotnas', rate: 0, voted: false, juri:true},
+        2:{id: 2, stage: 'Coimbra', name: 'Raquel Ralha & Pedro Renato',rate: 0, voted: false, juri:true},
+        3:{id: 3, stage: 'Médio Tejo', name: 'Coiote',rate: 0, voted: false, juri:true},
+        4:{id: 4, stage: 'Médio Tejo', name: 'Os Zhéróis 2.1.', rate: 0, voted: false, juri:true}
       };
-      console.log(res.data);
+      
       res.data.map(({band,rate}) => {bands[band].rate = rate;bands[band].voted = true; return 0})
       this.setState({ bands:Object.values(bands) });
     }).catch(error => {
@@ -36,17 +36,15 @@ class App extends Component {
     }).catch(error => {
       console.log(error)
     });
-
+ 
   }  
   
   render() {
-    
     return (
       <div>
         <img src={logo} className="App-logo" alt="logo" />
         <header className="App-header">
-          <p className="App-text">Aqui podes pontuar as atuações do 7º Festival Por Estas Bandas! A banda mais votada atua na Recepção ao Campista do Festival BONS SONS'18.</p>
-          <p className="App-title">Participa! A decisão é tua*</p>
+          <p className="App-title">App juri</p>
         </header>
         <div className="Vertical-line"/>
         <Bands bands={this.state.bands} />
@@ -86,7 +84,7 @@ class Band extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {rate: props.band.rate, voted: props.band.voted};
+    this.state = {rate: props.band.rate, voted: props.band.voted,juri: props.band.juri};
   }
 
 
@@ -97,10 +95,11 @@ class Band extends React.Component {
 
   vote(name,id) {
     console.log('vote', this.state.rate);
-    axios.post(`http://peb2018.pt:8080/api/vote`, { 
+    axios.post(`http://localhost:8080/api/vote`, { 
       "band":id,
       "bandName":name,
-      "rate":this.state.rate
+      "rate":this.state.rate,
+      "juri":this.state.juri
      })
     .then(res => {
       console.log(res);
@@ -153,4 +152,4 @@ class Band extends React.Component {
   }
 
 }
-export default App;
+export default Juri;

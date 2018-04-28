@@ -1,17 +1,31 @@
+@font-face {
+  font-family: 'dinpro-medium'; 
+  src: url('./fonts/dinpro-medium.eot'); /* IE9 Compatibility Modes */
+  src: url('./fonts/dinpro-medium.eot?') format('eot'),  /* IE6-IE8 */
+  url('./fonts/original-dinpro-medium.otf') format('otf'), 
+  url('./fonts/dinpro-medium.ttf') format('truetype'); /* Safari, Android, iOS */
+}
 
+@font-face {
+  font-family: 'dinpro-light'; 
+  src: url('./fonts/dinpro-light.eot'); /* IE9 Compatibility Modes */
+  src: url('./fonts/dinpro-light.eot?') format('eot'),  /* IE6-IE8 */
+  url('./fonts/original-dinpro-light.otf') format('otf'), 
+  url('./fonts/dinpro-light.ttf') format('truetype'); /* Safari, Android, iOS */
+}
 
 .App-logo {
   height: 80px;
   text-align: left;
   margin: 0px;
   border: 0px;
-  padding-left: 15px;
+  padding-left: 13px;
 }
 
 .App-header {
   background-color: #CFB676;
-  color: #2C3673;
-  padding-left: 60px;
+  color: #FFF;
+  padding-left: 40px;
   padding-right: 60px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -25,18 +39,41 @@
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 0px;
+  font-family: dinpro-light;
 }
 
-.App-title {
+.Footer-text {
   font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: dinpro-light;
+  padding-bottom: 15px
+}
+.App-title {
+  font-size: 16px;
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 5px;
 }
 
-.App-intro {
-  font-size: large;
+.Footer {
+  background-color: #2C3673;
+  color: #FFF;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0px;
+  margin: 0px;
+  text-align: center;
+ 
+}
+
+.App-text {
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @keyframes App-logo-spin {
@@ -56,8 +93,8 @@
 
 .Band-stage {
   background-color: #2C3673;
-  color: #CFB676;
-  font-size: 25px;
+  color: #FFF;
+  font-size: 21px;
   padding-left: 6px;
   padding-right: 6px;
   border: 0px;
@@ -66,8 +103,8 @@
 
 .Band-name {
   color: #2C3673;
-  font-size: 25px;
-  padding-top: 15px;
+  font-size: 21px;
+  padding-top: 10px;
   border: 0px;
   margin: 0px;
   font-weight: bold;
@@ -77,8 +114,8 @@
 .Band-hour {
   color: #2C3673;
   font-size: 15px;
-  padding-top: 30px;
-  padding-bottom: 8px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   border: 0px;
   margin: 0px;
 }
@@ -95,7 +132,8 @@
   color: #2C3673;
   margin: 0px 0px;
   font-size: 70px;
-  
+  border: none;
+  padding: 0px;
 }
 
 .Vote-rate {
@@ -108,13 +146,13 @@
   width: 100%;
   display: flex; 
   flex-direction: row;
-  background-color: #CFB676;
+  background-color: 'white';
 }
 
 .button {
   background-color: #2C3673;
   border: none;
-  color: #CFB676;
+  color: #FFF;
   padding: 5px 4px;
   text-align: center; 
   text-decoration: none;
@@ -125,7 +163,7 @@
 }
 
 .Vertical-line{
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #CFB676;
 }
 
 .button-voted{
@@ -134,10 +172,31 @@
   padding: 5px 4px;
   border: 0px;
   margin: 4px 25px;
-  padding-top: 8px;
+  padding-top: 25px;
   padding-bottom: 10px;
 }
 
 .space{
   padding-bottom: 15px;
+}
+
+.blue-star {
+  font-size:30px;
+  padding-bottom: 25px;
+  
+  color: #2C3673;
+}
+
+.light-blue-star {
+  font-size:30px;
+  color: #77C4BA;
+}
+
+.Footer-cw{
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: dinpro-light;
+  color: #2C3673
 }
