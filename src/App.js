@@ -97,20 +97,23 @@ class Band extends React.Component {
 
   vote(name,id) {
     console.log('vote', this.state.rate);
-    axios.post(`http://peb2018.pt:8080/api/vote`, { 
-      "band":id,
-      "bandName":name,
-      "rate":this.state.rate
-     })
-    .then(res => {
-      console.log(res);
-      console.log(res.data);
-      this.setState({ voted:true });
-    }).catch(error => {
-      console.log(error)
-      alert("Já foi efetuado o voto para este banda!");
-    });
-    
+    if(this.state.rate === 0){
+      alert("Atribuir a pontação primeiro através das estralas.")
+    } else {
+      axios.post(`http://peb2018.pt:8080/api/vote`, { 
+        "band":id,
+        "bandName":name,
+        "rate":this.state.rate
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        this.setState({ voted:true });
+      }).catch(error => {
+        console.log(error)
+        alert("Já foi efetuado o voto para este banda!");
+      });
+    }
   }
 
   render() {
