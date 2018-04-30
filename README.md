@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-# peb_voting_backend
+# peb_voting_system
 react project 
 
 See backend project on https://github.com/mariomourao/peb_voting_backend
