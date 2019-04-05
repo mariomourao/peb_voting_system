@@ -1,18 +1,60 @@
+@font-face {
+  font-family: 'DIN Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    local('DIN Pro'), 
+    url('./fonts/DINPro-Regular.otf') format('opentype');
+}
+  
+@font-face {
+  font-family: 'DIN Pro Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Light'), url('./fonts/DINPro-Light.otf') format('opentype');
+}
+  
+  
+@font-face {
+  font-family: 'DIN Pro Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Medium'), url('./fonts/DINPro-Medium.otf') format('opentype');
+}
 
+  
+@font-face {
+  font-family: 'DIN Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Bold'), url('./fonts/DINPro-Bold.otf') format('opentype');
+}
+  
+@font-face {
+  font-family: 'DIN Pro Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Black'), url('./fonts/DINPro-Black.otf') format('opentype');
+}
+  
+
+.App {
+  text-align: center;
+}
 
 .App-logo {
   height: 80px;
   text-align: left;
   margin: 0px;
   border: 0px;
-  padding-left: 15px;
+  padding-left: 13px;
 }
 
 .App-header {
-  background-color: #CFB676;
-  color: #2C3673;
-  padding-left: 60px;
-  padding-right: 60px;
+  background-color: #ECBD1A;
+  color: #3A2973;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   border: 0px;
@@ -21,81 +63,104 @@
  
 }
 
-.App-text {
-  font-size: 15px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 .App-title {
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 15.65pt;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 5px;
+  font-family: 'DIN Pro Bold';
 }
 
-.App-intro {
-  font-size: large;
+.App-text {
+  font-size: 15.65pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'DIN Pro';
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.App-link {
+  color: #61dafb;
+}
+
+.Footer-cw{
+  font-size: 10.56pt;
+  font-family: 'DIN Pro Bold';
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #2C3673
+}
+.Footer {
+  background-color: #2C3673;
+  font-family: 'DIN Pro';
+  font-size: 13.44pt;
+  color: #FFF;
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0px;
+  margin: 0px;
+  text-align: center;
+ 
 }
 
 .Band-info {
   border: 3px solid #2C3673;
   padding: 8px;
-  margin: 20px;
+  margin: 15px;
   width: 50%;
   display: flex; 
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
+
 }
 
 .Band-stage {
-  background-color: #2C3673;
-  color: #CFB676;
-  font-size: 25px;
-  padding-left: 6px;
-  padding-right: 6px;
+  color: #2C3673;
+  padding-top: 35px;
+  font-size: 15.36pt;
   border: 0px;
   margin: 0px;
+  font-family: 'DIN Pro Black'
 }
 
 .Band-name {
-  color: #2C3673;
-  font-size: 25px;
-  padding-top: 15px;
-  border: 0px;
-  margin: 0px;
-  font-weight: bold;
+  background-color: #2C3673;
+  color: #FFF;
+  bottom: 0px;
+  font-size: 25.5pt;
   text-align: left;
+  margin: 0;
+  padding: 0.2em;
+  line-height: 1em;
+  font-family: 'DIN Pro Bold'
 }
 
 .Band-hour {
   color: #2C3673;
-  font-size: 15px;
-  padding-top: 30px;
-  padding-bottom: 8px;
+  font-size: 14.88pt;
+  padding-bottom: 10px;
   border: 0px;
   margin: 0px;
+  font-family: 'DIN Pro Medium'
 }
 
 .Vote-container {
-  width: 50%;
+  width: 39%;
   display: flex; 
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
 }
 
 
 .Vote-value {
   color: #2C3673;
   margin: 0px 0px;
-  font-size: 70px;
-  
+  font-size: 64.93pt;
+  border: none;
+  padding: 0px;
+  font-family: 'DIN Pro Light';
 }
 
 .Vote-rate {
@@ -108,36 +173,55 @@
   width: 100%;
   display: flex; 
   flex-direction: row;
-  background-color: #CFB676;
+  background-color: 'white';
+}
+
+.Bands{
+  width: 100%;
+}
+
+.button-container {
+  padding: 0.6em;
 }
 
 .button {
   background-color: #2C3673;
-  border: none;
-  color: #CFB676;
-  padding: 5px 4px;
-  text-align: center; 
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  margin: 4px 25px;
+  color: #FFF;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  font-size: 24.96pt;
   cursor: pointer;
+  font-family: 'DIN Pro Medium';
 }
 
 .Vertical-line{
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #CFB676;
 }
 
 .button-voted{
   color: #2C3673;
-  font-size: 15px;
+  font-size: 14.4pt;
   padding: 5px 4px;
   border: 0px;
   margin: 4px 25px;
-  padding-top: 8px;
+  padding-top: 25px;
   padding-bottom: 10px;
+  font-family: 'DIN Pro';
 }
 
 .space{
   padding-bottom: 15px;
+}
+
+.blue-star {
+  font-size:35px;
+  padding-bottom: 25px;
+  color: #2C3673;
+  letter-spacing: 0.4em;
+  line-height: 0.5em;
+}
+
+.light-blue-star {
+  font-size:30px;
+  color: #77C4BA;
 }

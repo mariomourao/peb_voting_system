@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  front:
+    image: mariomourao/peb_voting
+    ports:
+      - 80:80/tcp
+  backend:
+    image: mariomourao/peb-backend
+    ports:
+      - 8080:8080/tcp
+    depends_on:
+      - "bd"
+  bd:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    stdin_open: true
+    volumes:
+      - /opt/peb/postgres:/var/lib/postgresql/data
+    tty: true
+    ports:
+      - 5432:5432/tcp

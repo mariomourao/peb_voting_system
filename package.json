@@ -1,17 +1,27 @@
 {
-  "name": "peb_vote",
+  "name": "peb_voting_system_2019",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "rc-rate": "^2.4.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-fontawesome": "^1.6.1",
+    "react-rating": "^1.6.2",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
-  }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
