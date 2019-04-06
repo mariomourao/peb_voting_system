@@ -1,7 +1,7 @@
 version: '2'
 services:
   front:
-    image: mariomourao/peb_voting
+    image: mariomourao/peb_voting:2019
     ports:
       - 80:80/tcp
   backend:
