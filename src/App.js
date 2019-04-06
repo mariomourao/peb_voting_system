@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import Rating from 'react-rating';
 import './rc.css'
+import axios from 'axios';
 
 class App extends Component {
 
@@ -15,16 +16,31 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const bands = {
-      1:{id: 1, stage: 'Aveiro', hour:'22h00', name: 'Siricaia', rate: 0, voted: false, juri:false},
-      2:{id: 2, stage: 'Ribatejo', hour:'22h50', name: 'Célia Barroca e o Indifado',rate: 0, voted: false, juri:false},
-      3:{id: 3, stage: 'Aveiro', hour:'23h40',name: 'Sharp Sharp',rate: 0, voted: false, juri:false},
-      4:{id: 4, stage: 'Ribatejo', hour:'00h30',name: 'Ossos d\'Ouvido', rate: 0, voted: false, juri:false},
-      5:{id: 5, stage: 'Aveiro', hour:'01h20',name: 'Cosmic Mass', rate: 0, voted: false, juri:false}
-    };
+    axios.get(`http://peb2019.pt:8080/api/vote`)
+    .then(res => {
+      const bands = {
+        1:{id: 1, stage: 'Aveiro', hour:'22h00', name: 'Siricaia', rate: 0, voted: false, juri:false},
+        2:{id: 2, stage: 'Ribatejo', hour:'22h50', name: 'Célia Barroca e o Indifado',rate: 0, voted: false, juri:false},
+        3:{id: 3, stage: 'Aveiro', hour:'23h40',name: 'Sharp Sharp',rate: 0, voted: false, juri:false},
+        4:{id: 4, stage: 'Ribatejo', hour:'00h30',name: 'Ossos d\'Ouvido', rate: 0, voted: false, juri:false},
+        5:{id: 5, stage: 'Aveiro', hour:'01h20',name: 'Cosmic Mass', rate: 0, voted: false, juri:false}
+      };
+      console.log(res.data);
+      res.data.map(({band,rate}) => {bands[band].rate = rate;bands[band].voted = true; return 0})
+      this.setState({ bands:Object.values(bands) });
+    }).catch(error => {
+      console.log(error)
+      alert("Erro a carregar a listagem das bandas!");
+    });
 
-    this.setState({ bands:Object.values(bands) });
-  }
+    axios.get(`http://peb2019.pt:8080/api/ip`)
+    .then(res => {
+      this.setState({ ip:res.data });
+    }).catch(error => {
+      console.log(error)
+    });
+
+  }  
 
 
   render() {
@@ -87,8 +103,7 @@ class Band extends React.Component {
     if(this.state.rate === 0){
       alert("Atribuir a pontação primeiro através das estralas.")
     } else {
-      /*
-      axios.post(`http://peb2018.pt:8080/api/vote`, { 
+      axios.post(`http://peb2019.pt:8080/api/vote`, { 
         "band":id,
         "bandName":name,
         "rate":this.state.rate
@@ -101,14 +116,13 @@ class Band extends React.Component {
         console.log(error)
         alert("Já foi efetuado o voto para este banda!");
       });
-      */
     }
   }
 
   render() {
     let bgColor = this.state.voted ?  "#ECBD1A" :"#3A2973"
-    let starColor = this.state.voted ?  "fa fa-star-o fa-2x light-blue-star" : "fa fa-star-o fa-2x blue-star" 
-    let fullStarColor = this.state.voted ?  "fa fa-star fa-2x light-blue-star" : "fa fa-star fa-2x blue-star" 
+    let starColor = this.state.voted ?  "fa fa-star-o fa-2x yellow-star" : "fa fa-star-o fa-2x blue-star" 
+    let fullStarColor = this.state.voted ?  "fa fa-star fa-2x yellow-star" : "fa fa-star fa-2x blue-star" 
     return (
 
       <div className='Row-band'  >

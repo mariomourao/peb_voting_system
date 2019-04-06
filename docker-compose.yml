@@ -1,5 +1,4 @@
 version: '2'
-
 services:
   front:
     image: mariomourao/peb_voting
@@ -19,7 +18,16 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     stdin_open: true
     volumes:
-      - /opt/peb/postgres:/var/lib/postgresql/data
+      - /Users/mariomourao/pebdata/pg:/var/lib/postgresql/data
     tty: true
     ports:
       - 5432:5432/tcp
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "peb@scocs.pt"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - "8085:80"
+    depends_on:
+      - "bd"

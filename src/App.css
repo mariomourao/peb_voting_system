@@ -195,13 +195,12 @@
 }
 
 .Vertical-line{
-    border-bottom: 2px solid #CFB676;
+    border-bottom: 2px solid #2C3673;
 }
 
 .button-voted{
   color: #2C3673;
   font-size: 14.4pt;
-  padding: 5px 4px;
   border: 0px;
   margin: 4px 25px;
   padding-top: 25px;
@@ -221,7 +220,10 @@
   line-height: 0.5em;
 }
 
-.light-blue-star {
-  font-size:30px;
-  color: #77C4BA;
+.yellow-star {
+  font-size:35px;
+  padding-bottom: 25px;
+  color: #ECBD1A;
+  letter-spacing: 0.4em;
+  line-height: 0.5em;
 }
